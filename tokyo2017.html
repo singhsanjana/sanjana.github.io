@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Tokyo 2017</title>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<style>
+		body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+		body, html {
+    		height: 100%;
+    		color: #777;
+    		line-height: 1.8;
+		}
+
+		/* Create a Parallax Effect */
+		.bgimg{
+			background-image: url('tokyo/mount-fuji-and-city-views.jpg');
+			min-height: 100%;
+			background-attachment: fixed;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+
+		.w3-wide {letter-spacing: 10px;}
+		.w3-hover-opacity {cursor: pointer;}
+
+		.modal {
+			display: none; 
+			position: fixed; 
+			z-index: 1; 
+			left: 10%;
+			top: 10%;
+			width: 80%; 
+			height: 80%;
+			overflow: auto; 
+			background-color: rgb(0,0,0);
+			background-color: rgba(0,0,0,0.9); 
+		}
+
+		.modal-content {
+			display: block;
+			max-width: 100%;
+			max-height: 600px;
+		}
+
+
+		/* Turn off parallax scrolling for tablets and phones */
+		@media only screen and (max-device-width: 1024px) {
+			.bgimg{
+				background-attachment: scroll;
+			}
+		}
+	</style>
+</head>
+
+<body>
+
+	<!-- Parallax Image with Logo Text -->
+	<div class="bgimg w3-display-container w3-opacity-min" id="home">
+		<div class="w3-display-middle" style="white-space:nowrap;">
+			<span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">TOKYO DIARIES</span>
+		</div>
+	</div>
+
+	<div class="w3-content w3-container w3-padding-64">
+		I feel extremely priveledged to have gotten this oppurtunity to visit the University of Tokyo, Japan. The trip helped me build the utmost respect for the Japanese culture and the people who are very warm and very accommodating.
+		<br>We were a group of 10 Indian students from various IITs who were hosted by various labs at UTokyo corresponding to out research areas. I was hosted at the <a href="http://www-kb.is.s.u-tokyo.ac.jp/index.html.en">Kobayashi lab</a> where I learnt about their work in higher order model checking.
+		<br><br><b>About the work @Kobayashi lab</b>
+		<br>The work culture at the lab is very professional yet very friendly and accommodating. The lab has some very focused and very motivated group of researchers who welcomed me really well. The lab's work is mostly focused on theoretical foundations for software and their applications for model checking and program verification. You can read about the lab <a href="http://www-kb.is.s.u-tokyo.ac.jp/index.html.en">here</a>.
+		<br><br><b>Stay in Japan</b>
+		<br>Tokyo is a very densely populated city but also very advanced and sorted. So to manage the large crowd they have rules and accepted practices which are easy to understand and follow. It is suggested that before the visit one reads about their ways. The city is extremely well connected by public transport which are punctual and comfortable. The city is generally costly and there are is no currency exchange from INR to JPY there. 
+		<br><br><b>Food and Language</b>
+		<br>The food is sooo good. I suggest you try the dishes popular their instead of looking for food that we find back home. All eating joints are very hygenic and the staff is very courteous. However, if you are a vegetarian you might have a very hard time in Tokyo, the one respite is that you can easily find Indian restaurants there, where you can ask for all vegetarian food even if it's not the menu.
+	</div>
+
+	<div id="displayBlock" class="w3-container modal">
+		<span onclick="this.parentElement.style.display='none'" class="w3-button w3-grey w3-display-topright">x</span>
+		<img class="modal-content w3-display-middle" id="displayImage">
+		<div id="displayCaption"></div>
+	</div>
+
+	<div class="w3-content w3-container w3-padding-64" id="portfolio">
+		<p class="w3-center"><em>Here are some of the places I covered there.<br> Click on the images to make them bigger</em></p><br>
+
+	<!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
+	<div class="w3-row-padding w3-center">
+		<div class="w3-col w3-card m3">
+			<img src="tokyo/1.jpg" style="width:100%" onclick="openDisplay(this)" class="w3-hover-opacity">
+			<div class="w3-container">Our exchange program group with Prof. Reiji Suda</div>
+		</div>
+
+		<div class="w3-col w3-card m3">
+			<img src="tokyo/13.jpg" style="width:100%" onclick="openDisplay(this)" class="w3-hover-opacity">
+			<div class="w3-container">Lake inside University of Tokyo, Hongo</div>
+		</div>
+
+		<div class="w3-col w3-card m3">
+			<img src="tokyo/9.jpg" style="width:100%" onclick="openDisplay(this)" class="w3-hover-opacity">
+			<div class="w3-container">Tokyo sea-side</div>
+		</div>
+
+		<div class="w3-col w3-card m3">
+			<img src="tokyo/12.jpg" style="width:100%" onclick="openDisplay(this)" class="w3-hover-opacity">
+			<div class="w3-container">A typical street in Tokyo</div>
+		</div>
+	</div>
+
+	<div class="w3-row-padding w3-center w3-section">
+		<div class="w3-col w3-card m3">
+			<img src="tokyo/8.jpg" style="width:100%" onclick="openDisplay(this)" class="w3-hover-opacity">
+			<div class="w3-container">Tokyo has some really lovely gardens.</div>
+		</div>
+
+		<div class="w3-col w3-card m3">
+			<img src="tokyo/11.jpg" style="width:100%" onclick="openDisplay(this)" class="w3-hover-opacity">
+			<div class="w3-container">The clean and beautiful Sumida river</div>
+		</div>
+
+		<div class="w3-col w3-card m3">
+			<img src="tokyo/10.jpg" style="width:100%" onclick="openDisplay(this)" class="w3-hover-opacity">
+			<div class="w3-container">Enoshima Island<br>near Tokyo</div>
+		</div>
+
+		<div class="w3-col w3-card m3">
+			<img src="tokyo/18.jpg" style="width:100%" onclick="openDisplay(this)" class="w3-hover-opacity">
+			<div class="w3-container">The famous Buddha statue, Kotoku-in, Kamakura</div>
+		</div>
+	</div>
+
+	<div class="w3-row-padding w3-center w3-section">
+		<div class="w3-col w3-card m3">
+			<img src="tokyo/5.jpg" style="width:100%" onclick="openDisplay(this)" class="w3-hover-opacity">
+			<div class="w3-container">Akamon ramen, a speciality of University cafe</div>
+		</div>
+
+		<div class="w3-col w3-card m3">
+			<img src="tokyo/14.jpg" style="width:100%" onclick="openDisplay(this)" class="w3-hover-opacity">
+			<div class="w3-container">Macha, Japanese traditional tea</div>
+		</div>
+
+		<div class="w3-col w3-card m3">
+			<img src="tokyo/17.jpg" style="width:100%" onclick="openDisplay(this)" class="w3-hover-opacity">
+			<div class="w3-container">The Tokyo<br>Skytree Tower</div>
+		</div>
+
+		<div class="w3-col w3-card m3">
+			<img src="tokyo/19.jpg" style="width:100%" onclick="openDisplay(this)" class="w3-hover-opacity">
+			<div class="w3-container">world-record roller coasters. A must try.</div>
+		</div>
+	</div>
+
+	<div class="w3-row-padding w3-center w3-section">
+		<div class="w3-col w3-card m3">
+			<img src="tokyo/2.jpg" style="width:100%" onclick="openDisplay(this)" class="w3-hover-opacity">
+			<div class="w3-container">Sumeda<br>aquarium</div>
+		</div>
+
+		<div class="w3-col w3-card m3">
+			<img src="tokyo/3.jpg" style="width:100%" onclick="openDisplay(this)" class="w3-hover-opacity">
+			<div class="w3-container">Tokyo Disney sea. Beyond awesome.</div>
+		</div>
+
+		<div class="w3-col w3-card m3">
+			<img src="tokyo/4.jpg" style="width:100%" onclick="openDisplay(this)" class="w3-hover-opacity">
+			<div class="w3-container">Well, if you go to Disney Land you get mickey ears</div>
+		</div>
+
+		<div class="w3-col w3-card m3">
+			<img src="tokyo/21.jpg" style="width:100%" onclick="openDisplay(this)" class="w3-hover-opacity">
+			<div class="w3-container">Such comfortable trains in Japan</div>
+		</div>
+	</div>
+
+	<div class="w3-container w3-padding-32 w3-mobile">
+	<br>I would like to thank everybody associated with Sakura Science Program and JST for inviting us and providing us with an experience that would definitely stay with me always
+	</div>
+</body>
+
+</html>
+
+<script>
+
+function openDisplay(element){
+	document.getElementById("displayImage").src = element.src;
+	document.getElementById("displayBlock").style.display = "block";
+}
+
+</script>
